@@ -1,0 +1,28 @@
+-- create an inventory database for a store that sells pens
+CREATE TABLE pen_store_inventory (id INTEGER PRIMARY KEY, item TEXT, color TEXT, quantity_per_box INTEGER, price_per_box INTEGER, number_of_boxes INTEGER, sold_last_month INTEGER);
+
+INSERT INTO pen_store_inventory VALUES (1, "Felt tip", "black", 10, 6, 100, 68);
+INSERT INTO pen_store_inventory VALUES (2, "Felt tip", "blue", 10, 6, 90, 60);
+INSERT INTO pen_store_inventory VALUES (3, "Felt tip", "red", 10, 6, 50, 40);
+INSERT INTO pen_store_inventory VALUES (4, "Felt tip", "purple", 10, 6, 40, 25);
+INSERT INTO pen_store_inventory VALUES (5, "Felt tip", "multi color", 10, 7, 50, 46);
+INSERT INTO pen_store_inventory VALUES (6, "Ball point", "black", 20, 8, 200, 200);
+INSERT INTO pen_store_inventory VALUES (7, "Ball point", "blue", 20, 8, 200, 175);
+INSERT INTO pen_store_inventory VALUES (8, "Ball point", "red", 20, 8, 150, 135);
+INSERT INTO pen_store_inventory VALUES (9, "Ball point", "multi color", 20, 9, 150, 162);
+INSERT INTO pen_store_inventory VALUES (10, "Gel", "black", 4, 6, 200, 220);
+INSERT INTO pen_store_inventory VALUES (11, "Gel", "blue", 4, 6, 200, 176);
+INSERT INTO pen_store_inventory VALUES (12, "Gel", "red", 4, 6, 150, 110);
+INSERT INTO pen_store_inventory VALUES (13, "Gel", "multi color", 10, 14, 140, 32);
+INSERT INTO pen_store_inventory VALUES (14, "Calligraphy", "Black", 1, 20, 20, 15);
+
+-- display the database ordered by price per box
+SELECT * FROM pen_store_inventory ORDER BY price_per_box;
+
+-- show the pens that sold more than 100 boxes last month
+SELECT * FROM pen_store_inventory WHERE sold_last_month > 100;
+
+-- show how many boxes of each type of pen (any color) are currently in inventory
+SELECT item, SUM(number_of_boxes) FROM pen_store_inventory GROUP BY item;
+
+
