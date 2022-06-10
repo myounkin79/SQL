@@ -1,0 +1,44 @@
+/* Put your data in here and query it! */
+
+CREATE TABLE apples_inventory (id integer primary key autoincrement, variety TEXT, color TEXT, quantity INTEGER, use TEXT, deliciousness TEXT);
+
+INSERT INTO apples_inventory (variety, color, quantity, use, deliciousness) VALUES ("Red Delicious", "red", 50, "eating", 1);
+INSERT INTO apples_inventory (variety, color, quantity, use, deliciousness) VALUES ("Red Delicious", "red", 50, "baking", 3);
+INSERT INTO apples_inventory (variety, color, quantity, use, deliciousness) VALUES ("Fuji", "red", 125, "eating", 9);
+INSERT INTO apples_inventory (variety, color, quantity, use, deliciousness) VALUES ("Fuji", "red", 125, "baking", 6);
+INSERT INTO apples_inventory (variety, color, quantity, use, deliciousness) VALUES ("Fuji", "red", 125, "cooking", 7);
+INSERT INTO apples_inventory (variety, color, quantity, use, deliciousness) VALUES ("Gala", "red", 76, "eating", 5);
+INSERT INTO apples_inventory (variety, color, quantity, use, deliciousness) VALUES ("Gala", "red", 76, "cooking", 5);
+INSERT INTO apples_inventory (variety, color, quantity, use, deliciousness) VALUES ("Golden Delicious", "yellow", 92, "eating", 8);
+INSERT INTO apples_inventory (variety, color, quantity, use, deliciousness) VALUES ("Golden Delicious", "yellow", 92, "baking", 7);
+INSERT INTO apples_inventory (variety, color, quantity, use, deliciousness) VALUES ("Golden Delicious", "yellow", 92, "cooking", 7);
+INSERT INTO apples_inventory (variety, color, quantity, use, deliciousness) VALUES ("Honey Crisp", "red and yellow", 200, "eating", 9);
+INSERT INTO apples_inventory (variety, color, quantity, use, deliciousness) VALUES ("Honey Crisp", "red and yellow", 200, "baking", 5);
+INSERT INTO apples_inventory (variety, color, quantity, use, deliciousness) VALUES ("Honey Crisp", "red and yellow", 200, "cooking", 6);
+INSERT INTO apples_inventory (variety, color, quantity, use, deliciousness) VALUES ("Granny Smith", "green", 70, "eating", 2);
+INSERT INTO apples_inventory (variety, color, quantity, use, deliciousness) VALUES ("Granny Smith", "green", 70, "baking", 8);
+INSERT INTO apples_inventory (variety, color, quantity, use, deliciousness) VALUES ("Granny Smith", "green", 70, "cooking", 6);
+
+/*What are the least to most delicious apples?*/
+SELECT * from apples_inventory ORDER BY deliciousness;
+
+SELECT MAX(quantity), variety from apples_inventory GROUP by variety;
+
+/*What are the best apples to eat?*/
+SELECT * from apples_inventory WHERE deliciousness > 7 AND use = "eating";
+
+/*How many red apples do I have?*/
+SELECt variety, SUM(quantity) from apples_inventory WHERE color = "red" GROUP BY variety;
+
+/*How many choices do I have for a good baking apple?*/
+Select * from apples_inventory WHERE use = "baking" and deliciousness >=6;
+
+/*How does each variety rate for each use when I use my deliciousness scale?*/
+SELECT variety, use, CASE
+    WHEN deliciousness > 8 THEN "best"
+    WHEN deliciousness > 6 THEN "pretty good"
+    WHEN deliciousness > 4 THEN "ok"
+    ELSE "garbage"
+    END AS apple_rating
+FROM apples_inventory
+ORDER BY apple_rating;
