@@ -1,0 +1,103 @@
+/* Table including movie stars and movies they have been in */
+CREATE TABLE famous_people (id INTEGER PRIMARY KEY, star_id TEXT, first_name TEXT, last_name TEXT, movie_title TEXT);
+
+INSERT INTO famous_people VALUES (1, 1, "Ryan", "Reynolds", "Deadpool");
+INSERT INTO famous_people VALUES (2, 1, "Ryan", "Reynolds", "Detective Pikachu");
+INSERT INTO famous_people VALUES (3, 1, "Ryan", "Reynolds", "Free Guy");
+INSERT INTO famous_people VALUES (4, 1, "Ryan", "Reynolds", "The Adam Project");
+INSERT INTO famous_people VALUES (5, 1, "Ryan", "Reynolds", "Green Lantern");
+INSERT INTO famous_people VALUES (6, 2, "Blake", "Lively", "Green Lantern");
+INSERT INTO famous_people VALUES (7, 2, "Blake", "Lively", "A Simple Favor");
+INSERT INTO famous_people VALUES (8, 2, "Blake", "Lively", "The Age of Adeline");
+INSERT INTO famous_people VALUES (9, 3, "John", "Cusack", "High Fidelity");
+INSERT INTO famous_people VALUES (10, 3, "John", "Cusack", "Grosse Pointe Blank");
+INSERT INTO famous_people VALUES (11, 3, "John", "Cusack", "Identity");
+INSERT INTO famous_people VALUES (12, 3, "John", "Cusack", "Say Anything");
+INSERT INTO famous_people VALUES (13, 4, "John", "Krasinski", "A Quiet Place");
+INSERT INTO famous_people VALUES (14, 4, "John", "Krasinski", "13 Hours");
+INSERT INTO famous_people VALUES (15, 4, "John", "Krasinski", "The League of Superpets");
+INSERT INTO famous_people VALUES (16, 5, "Emily", "Blunt", "A Quiet Place");
+INSERT INTO famous_people VALUES (17, 5, "Emily", "Blunt", "Jungle Cruise");
+INSERT INTO famous_people VALUES (18, 5, "Emily", "Blunt", "Mary Poppins Returns");
+INSERT INTO famous_people VALUES (19, 6, "Viola", "Davis", "The Help");
+INSERT INTO famous_people VALUES (20, 6, "Viola", "Davis", "The Woman King");
+INSERT INTO famous_people VALUES (21, 6, "Viola", "Davis", "Suicide Squad");
+
+
+/* Table including movie stars and their current spouse */
+CREATE TABLE spouse (id INTEGER PRIMARY KEY, star_id TEXT, first_name TEXT, last_name TEXT, spouse TEXT);
+INSERT INTO spouse (star_id, first_name, last_name, spouse) VALUES (1, "Ryan", "Reynolds", "Blake Lively");
+INSERT INTO spouse (star_id, first_name, last_name, spouse) VALUES (1, "Ryan", "Reynolds", "Blake Lively");
+INSERT INTO spouse (star_id, first_name, last_name, spouse) VALUES (1, "Ryan", "Reynolds", "Blake Lively");
+INSERT INTO spouse (star_id, first_name, last_name, spouse) VALUES (1, "Ryan", "Reynolds", "Blake Lively");
+INSERT INTO spouse (star_id, first_name, last_name, spouse) VALUES (1, "Ryan", "Reynolds", "Blake Lively");
+INSERT INTO spouse (star_id, first_name, last_name, spouse) VALUES (2, "Blake", "Lively", "Ryan Reynolds");
+INSERT INTO spouse (star_id, first_name, last_name, spouse) VALUES (2, "Blake", "Lively", "Ryan Reynolds");
+INSERT INTO spouse (star_id, first_name, last_name, spouse) VALUES (2, "Blake", "Lively", "Ryan Reynolds");
+INSERT INTO spouse (star_id, first_name, last_name, spouse) VALUES (3, "John", "Cusack", "Single");
+INSERT INTO spouse (star_id, first_name, last_name, spouse) VALUES (3, "John", "Cusack", "Single");
+INSERT INTO spouse (star_id, first_name, last_name, spouse) VALUES (3, "John", "Cusack", "Single");
+INSERT INTO spouse (star_id, first_name, last_name, spouse) VALUES (3, "John", "Cusack", "Single");
+INSERT INTO spouse (star_id, first_name, last_name, spouse) VALUES (4, "John", "Krasinski", "Emily Blunt");
+INSERT INTO spouse (star_id, first_name, last_name, spouse) VALUES (4, "John", "Krasinski", "Emily Blunt");
+INSERT INTO spouse (star_id, first_name, last_name, spouse) VALUES (4, "John", "Krasinski", "Emily Blunt");
+INSERT INTO spouse (star_id, first_name, last_name, spouse) VALUES (5, "Emily", "Blunt", "John Krasinski");
+INSERT INTO spouse (star_id, first_name, last_name, spouse) VALUES (5, "Emily", "Blunt", "John Krasinski");
+INSERT INTO spouse (star_id, first_name, last_name, spouse) VALUES (5, "Emily", "Blunt", "John Krasinski");
+INSERT INTO spouse (star_id, first_name, last_name, spouse) VALUES (6, "Viola", "Davis", "Julius Tennon");
+INSERT INTO spouse (star_id, first_name, last_name, spouse) VALUES (6, "Viola", "Davis", "Julius Tennon");
+INSERT INTO spouse (star_id, first_name, last_name, spouse) VALUES (6, "Viola", "Davis", "Julius Tennon");
+INSERT INTO spouse (star_id, first_name, last_name, spouse) VALUES (6, "Viola", "Davis", "Julius Tennon");
+
+
+/* Table including movies, if I've seen them, and how I rank them on a scale of 1-10 */
+CREATE TABLE movies_seen (id INTEGER PRIMARY KEY, star_id TEXT, title TEXT, seen TEXT, ranking INTEGER);
+INSERT INTO movies_seen (star_id, title, seen, ranking) VALUES (4, "A quiet Place", "yes", 8);
+INSERT INTO movies_seen (star_id, title, seen, ranking) VALUES (5, "A quiet Place", "yes", 8);
+INSERT INTO movies_seen (star_id, title, seen, ranking) VALUES (1, "Deadpool", "yes", 7);
+INSERT INTO movies_seen (star_id, title, seen, ranking) VALUES (1, "Detective Pikachu", "yes", 7);
+INSERT INTO movies_seen (star_id, title, seen, ranking) VALUES (1, "Free Guy", "no", NULL);
+INSERT INTO movies_seen (star_id, title, seen, ranking) VALUES (1, "The Adam Project", "no", NULL);
+INSERT INTO movies_seen (star_id, title, seen, ranking) VALUES (1, "Green Lantern", "no", NULL);
+INSERT INTO movies_seen (star_id, title, seen, ranking) VALUES (2, "A Simple Favor", "yes", 5);
+INSERT INTO movies_seen (star_id, title, seen, ranking) VALUES (2, "The Age of Adeline", "no", NULL);
+INSERT INTO movies_seen (star_id, title, seen, ranking) VALUES (3, "High Fidelity", "yes", 10);
+INSERT INTO movies_seen (star_id, title, seen, ranking) VALUES (3, "Grosse Pointe Blank", "yes", 9);
+INSERT INTO movies_seen (star_id, title, seen, ranking) VALUES (3, "Identity", "yes", 6);
+INSERT INTO movies_seen (star_id, title, seen, ranking) VALUES (3, "Say Anything", "yes", 8);
+INSERT INTO movies_seen (star_id, title, seen, ranking) VALUES (4, "13 Hours", "no", NULL);
+INSERT INTO movies_seen (star_id, title, seen, ranking) VALUES (4, "The League of Superpets", "no", NULL);
+INSERT INTO movies_seen (star_id, title, seen, ranking) VALUES (5, "Jungle Cruise", "no", NULL);
+INSERT INTO movies_seen (star_id, title, seen, ranking) VALUES (5, "Mary Poppins Returns", "no", NULL);
+INSERT INTO movies_seen (star_id, title, seen, ranking) VALUES (6, "The Help", "yes", 7);
+INSERT INTO movies_seen (star_id, title, seen, ranking) VALUES (6, "The Woman King", "no", NULL);
+INSERT INTO movies_seen (star_id, title, seen, ranking) VALUES (6, "Ma Rainey's Black Bottom", "no", NULL);
+INSERT INTO movies_seen (star_id, title, seen, ranking) VALUES (6, "Suicide Squad", "yes", 5);
+INSERT INTO movies_seen (star_id, title, seen, ranking) VALUES (0, "Stand By Me", "yes", 10);
+
+
+/* Table including movie stars, their current age, and their birth date */
+CREATE TABLE age (id INTEGER PRIMARY KEY, star_id TEXT, name TEXT, age INTEGER, birthdate INTEGER);
+INSERT INTO age (star_id, name, age, birthdate) VALUES (1, "Ryan Reynolds", 45, 10/23/1976);
+INSERT INTO age (star_id, name, age, birthdate) VALUES (2, "Blake Lively", 35, 08/25/1987);
+INSERT INTO age (star_id, name, age, birthdate) VALUES (3, "John Cusack", 56, 06/28/1966);
+INSERT INTO age (star_id, name, age, birthdate) VALUES (4, "Emily Blunt", 39, 02/23/1983);
+INSERT INTO age (star_id, name, age, birthdate) VALUES (5, "John Krasinski", 42, 10/20/1979);
+INSERT INTO age (star_id, name, age, birthdate) VALUES (6, "Viola Davis", 57, 08/11/1965);
+
+
+/* Who stars in the movies I like the most? */
+SELECT famous_people.first_name, famous_people.last_name, movies_seen.title, movies_seen.ranking FROM famous_people
+    JOIN movies_seen
+    ON famous_people.star_id = movies_seen.star_id
+    WHERE ranking > 0
+    GROUP BY title
+    ORDER BY ranking DESC;
+    
+/* What is the average movie ranking for each star? */
+SELECT last_name, AVG (movies_seen.ranking) FROM movies_seen
+JOIN famous_people
+ON famous_people.star_id = movies_seen.star_id
+GROUP BY famous_people.last_name
+
+    
